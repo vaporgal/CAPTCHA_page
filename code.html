@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .v_code {
+            width: 300px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+        .code_show {
+            position: relative;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+
+        .code {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 5px;
+    color: #333;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+    user-select: none;
+    position: relative;
+    background: linear-gradient(45deg, 
+        #f0f0f0 25%, #e0e0e0 25%, 
+        #e0e0e0 50%, #f0f0f0 50%, 
+        #f0f0f0 75%, #e0e0e0 75%, 
+        #e0e0e0 100%
+    );
+    background-size: 4px 4px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transform: skew(-5deg);
+    overflow: hidden;
+}
+
+.code::before,
+.code::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(45deg, transparent 45%, #333 45%, #333 55%, transparent 55%),
+        linear-gradient(-45deg, transparent 45%, #333 45%, #333 55%, transparent 55%),
+        linear-gradient(to right, #ff0000, #00ff00, #0000ff);
+    background-size: 8px 8px, 8px 8px, 100% 100%;
+    background-position: 0 0, 4px 4px, 0 0;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.code::after {
+    content: 'CAPTCHA';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 40px;
+    color: rgba(0,0,0,0.03);
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0, -100% 0, 0 0;
+    }
+    100% {
+        background-position: 100% 0, 100% 0, 0 0;
+    }
+}
+
+.code:hover {
+    animation: shimmer 3s infinite linear;
+}
+
+
+
+        #linkbt {
+            display: block;
+            margin-top: 5px;
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .input_code {
+            margin-top: 10px;
+        }
+        #inputCode {
+            width: 100px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+        #Button1 {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #Button1:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+    
+</head>
+<body>
+<div class = 'v_code'>
+    <div class   = 'code_show'>
+        <span class = "code" id = "checkCode">adf34y</span> 
+        <a id = 'linkbt'>Hard to see?</a></div>
+
+        <div >
+            <label for="inputCode">CAPTCHA
+            </label>
+            <input type = "text" id ="inputCode"/>
+            <div id = "text_show"></div>
+
+        </div>
+        <input id = "Button1" type = "button" value = "confirm">
+</div>
+<script src = "index.js">
+    
+</script>
+</body>
+</html>
